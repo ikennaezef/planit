@@ -1,7 +1,7 @@
 $colors: (
   text: #2a2a2a,
   light-text: lighten(#2a2a2a, 40%),
-  light-bg: #eef2f5,
+  light-bg: #ecf0f3,
   accent: #4a0bff,
 );
 
@@ -10,9 +10,16 @@ $colors: (
 }
 
 $tablet: 769px;
+$mobile: 600px;
 
 @mixin tablet {
-  @media (min-width: #{$tablet}) {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
     @content;
   }
 }
@@ -80,6 +87,11 @@ section#hero {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
     align-items: center;
+    justify-items: center;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
 
     .hero__text {
       h1 {
@@ -91,13 +103,17 @@ section#hero {
 
       p {
         font-size: 1rem;
-        line-height: 1.4;
+        line-height: 1.5;
         color: color(light-text);
         margin-bottom: 2rem;
       }
 
       button {
         @extend %accent-btn;
+
+        @include mobile {
+          width: 100%;
+        }
       }
     }
   }
@@ -111,8 +127,13 @@ section#convenient {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    justify-content: center;
     grid-gap: 1rem;
     padding: 4rem 0;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   .convenient__text {
@@ -126,11 +147,20 @@ section#convenient {
       line-height: 1.5;
       margin-bottom: 1.5rem;
       width: 80%;
+
+      @include tablet {
+        width: 100%;
+      }
     }
 
     .profile {
       display: flex;
       align-items: center;
+
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
       .profile__image {
         width: 45px;
@@ -138,6 +168,10 @@ section#convenient {
         object-fit: cover;
         margin-right: 1.5rem;
         border-radius: 50%;
+
+        @include mobile {
+          margin-bottom: 1rem;
+        }
       }
 
       p {
@@ -165,28 +199,38 @@ section#flexible {
       line-height: 1.5;
       width: 80%;
       margin: auto;
+
+      @include mobile {
+        width: 100%;
+      }
     }
   }
 
   .flexible__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
     align-items: center;
     padding: 0 1rem;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
 
     .flexible__grid__text ul {
       list-style: none;
 
       li {
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.3rem;
+        line-height: 1.5;
         color: color(light-text);
         display: flex;
         align-items: center;
 
         span {
           position: absolute;
-          width: 10px;
-          height: 10px;
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
           background-color: color(accent);
         }
@@ -213,9 +257,17 @@ section#whychoose {
   .whychoose__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 3rem;
+    column-gap: 2rem;
+    row-gap: 3rem;
     margin-bottom: 4rem;
+
+    @include tablet {
+      column-gap: 1rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
 
     .whychoose__reason {
       text-align: left;
@@ -229,6 +281,14 @@ section#whychoose {
         color: color(light-text);
         width: 80%;
         line-height: 1.5;
+
+        @include tablet {
+          width: 90%;
+        }
+
+        @include mobile {
+          width: 100%;
+        }
       }
     }
   }
@@ -238,6 +298,11 @@ section#whychoose {
     text-align: center;
     padding: 0.7rem 6rem;
     font-size: 1rem;
+
+    @include mobile {
+      width: 100%;
+      padding: 0.7rem 1rem;
+    }
   }
 }
 
@@ -252,6 +317,10 @@ section#satisfaction {
     grid-gap: 1rem;
     padding: 4rem 0;
 
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+
     .satisfaction__text {
       h2 {
         margin-bottom: 1.5rem;
@@ -263,11 +332,20 @@ section#satisfaction {
         line-height: 1.5;
         margin-bottom: 1.5rem;
         width: 80%;
+
+        @include tablet {
+          width: 100%;
+        }
       }
 
       .profile {
         display: flex;
         align-items: center;
+
+        @include mobile {
+          flex-direction: column;
+          align-items: flex-start;
+        }
 
         .profile__image {
           width: 45px;
@@ -275,6 +353,10 @@ section#satisfaction {
           object-fit: cover;
           margin-right: 1.5rem;
           border-radius: 50%;
+
+          @include mobile {
+            margin-bottom: 1rem;
+          }
         }
 
         p {
@@ -298,9 +380,17 @@ section#answers {
   .answers__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 3rem;
+    column-gap: 2rem;
+    row-gap: 3rem;
     margin-bottom: 4rem;
+
+    @include tablet {
+      column-gap: 1rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
 
     .answers__answer {
       text-align: left;
@@ -314,6 +404,14 @@ section#answers {
         color: color(light-text);
         width: 80%;
         line-height: 1.5;
+
+        @include tablet {
+          width: 90%;
+        }
+
+        @include mobile {
+          width: 100%;
+        }
       }
     }
   }
@@ -328,17 +426,35 @@ section#boost {
     font-size: 1.8rem;
     width: 50%;
     margin: 1.5rem auto;
+
+    @include tablet {
+      width: 70%;
+      line-height: 1.4;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   p {
     margin-bottom: 1.5rem;
     font-weight: 500;
+    line-height: 1.5;
   }
 
   button {
     @extend %accent-btn;
     width: 40%;
     font-size: 1rem;
+
+    @include tablet {
+      width: 60%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
