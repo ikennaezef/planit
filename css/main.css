@@ -3,7 +3,26 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+section#hero .hero__container .hero__text button, section#whychoose button, section#boost button {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.8rem 2.5rem;
+  background-color: #4a0bff;
+  color: #fff;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+section#hero .hero__container .hero__text button:hover, section#whychoose button:hover, section#boost button:hover {
+  opacity: 0.8;
 }
 
 body {
@@ -28,6 +47,7 @@ img {
   text-decoration: none;
   color: #2a2a2a;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .nav a span {
@@ -62,18 +82,6 @@ section#hero .hero__container .hero__text p {
   line-height: 1.4;
   color: #909090;
   margin-bottom: 2rem;
-}
-
-section#hero .hero__container .hero__text button {
-  display: inline-block;
-  border: none;
-  outline: none;
-  padding: 0.8rem 2.5rem;
-  background-color: #4a0bff;
-  color: #fff;
-  border-radius: 2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
 }
 
 section#convenient {
@@ -119,7 +127,7 @@ section#convenient .convenient__text .profile .profile__image {
   height: 45px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
   border-radius: 50%;
 }
 
@@ -145,6 +153,8 @@ section#flexible .flexible__heading h4 {
   color: #909090;
   font-weight: 500;
   line-height: 1.5;
+  width: 80%;
+  margin: auto;
 }
 
 section#flexible .flexible__grid {
@@ -184,5 +194,171 @@ section#flexible .flexible__grid .flexible__grid__text ul li span {
 section#flexible .flexible__grid .flexible__grid__text ul li p {
   display: inline-block;
   margin-left: 1.4rem;
+}
+
+section#whychoose {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+section#whychoose h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+section#whychoose .whychoose__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+section#whychoose .whychoose__grid .whychoose__reason {
+  text-align: left;
+}
+
+section#whychoose .whychoose__grid .whychoose__reason h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+section#whychoose .whychoose__grid .whychoose__reason p {
+  color: #909090;
+  width: 80%;
+  line-height: 1.5;
+}
+
+section#whychoose button {
+  text-align: center;
+  padding: 0.7rem 6rem;
+  font-size: 1rem;
+}
+
+section#satisfaction {
+  background-color: #eef2f5;
+  padding: 1rem;
+}
+
+section#satisfaction .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 1rem;
+  padding: 4rem 0;
+}
+
+section#satisfaction .container .satisfaction__text h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+}
+
+section#satisfaction .container .satisfaction__text .satisfaction__text__statement {
+  color: #909090;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  width: 80%;
+}
+
+section#satisfaction .container .satisfaction__text .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#satisfaction .container .satisfaction__text .profile .profile__image {
+  width: 45px;
+  height: 45px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+}
+
+section#satisfaction .container .satisfaction__text .profile p {
+  font-size: 0.9rem;
+}
+
+section#answers {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+section#answers h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+section#answers .answers__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+section#answers .answers__grid .answers__answer {
+  text-align: left;
+}
+
+section#answers .answers__grid .answers__answer h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+section#answers .answers__grid .answers__answer p {
+  color: #909090;
+  width: 80%;
+  line-height: 1.5;
+}
+
+section#boost {
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+section#boost h2 {
+  font-size: 1.8rem;
+  width: 50%;
+  margin: 1.5rem auto;
+}
+
+section#boost p {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+section#boost button {
+  width: 40%;
+  font-size: 1rem;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  color: #909090;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+footer small {
+  font-size: 0.8rem;
 }
 /*# sourceMappingURL=main.css.map */

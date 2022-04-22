@@ -1,20 +1,45 @@
 $colors: (
   text: #2a2a2a,
   light-text: lighten(#2a2a2a, 40%),
-  lighter: #bcc0c2,
   light-bg: #eef2f5,
   accent: #4a0bff,
 );
 
-@function color ($key) {
+@function color($key) {
   @return map-get($colors, $key);
+}
+
+$tablet: 769px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+%accent-btn {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.8rem 2.5rem;
+  background-color: color(accent);
+  color: #fff;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 body {
@@ -38,6 +63,7 @@ img {
     text-decoration: none;
     color: color(text);
     font-weight: 600;
+    font-size: 1.5rem;
 
     span {
       color: color(accent);
@@ -71,15 +97,7 @@ section#hero {
       }
 
       button {
-        display: inline-block;
-        border: none;
-        outline: none;
-        padding: 0.8rem 2.5rem;
-        background-color: color(accent);
-        color: #fff;
-        border-radius: 2rem;
-        font-size: 0.9rem;
-        font-weight: 600;
+        @extend %accent-btn;
       }
     }
   }
@@ -118,7 +136,7 @@ section#convenient {
         width: 45px;
         height: 45px;
         object-fit: cover;
-        margin-right: 2rem;
+        margin-right: 1.5rem;
         border-radius: 50%;
       }
 
@@ -145,6 +163,8 @@ section#flexible {
       color: color(light-text);
       font-weight: 500;
       line-height: 1.5;
+      width: 80%;
+      margin: auto;
     }
   }
 
@@ -177,5 +197,162 @@ section#flexible {
         }
       }
     }
+  }
+}
+
+section#whychoose {
+  padding: 3rem 0;
+  text-align: center;
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .whychoose__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;
+    margin-bottom: 4rem;
+
+    .whychoose__reason {
+      text-align: left;
+
+      h4 {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+      }
+
+      p {
+        color: color(light-text);
+        width: 80%;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  button {
+    @extend %accent-btn;
+    text-align: center;
+    padding: 0.7rem 6rem;
+    font-size: 1rem;
+  }
+}
+
+section#satisfaction {
+  background-color: color(light-bg);
+  padding: 1rem;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    grid-gap: 1rem;
+    padding: 4rem 0;
+
+    .satisfaction__text {
+      h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.7rem;
+      }
+
+      .satisfaction__text__statement {
+        color: color(light-text);
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        width: 80%;
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+
+        .profile__image {
+          width: 45px;
+          height: 45px;
+          object-fit: cover;
+          margin-right: 1.5rem;
+          border-radius: 50%;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+section#answers {
+  padding: 3rem 0;
+  text-align: center;
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .answers__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;
+    margin-bottom: 4rem;
+
+    .answers__answer {
+      text-align: left;
+
+      h4 {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+      }
+
+      p {
+        color: color(light-text);
+        width: 80%;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+section#boost {
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 1.8rem;
+    width: 50%;
+    margin: 1.5rem auto;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  button {
+    @extend %accent-btn;
+    width: 40%;
+    font-size: 1rem;
+  }
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  color: color(light-text);
+
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  small {
+    font-size: 0.8rem;
   }
 }
