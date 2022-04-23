@@ -27,6 +27,7 @@ section#hero .hero__container .hero__text button:hover, section#whychoose button
 
 body {
   color: #2a2a2a;
+  overflow-x: hidden;
 }
 
 .container {
