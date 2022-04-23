@@ -9,6 +9,7 @@ $colors: (
   @return map-get($colors, $key);
 }
 
+// for responsiveness/media queries
 $tablet: 769px;
 $mobile: 600px;
 
