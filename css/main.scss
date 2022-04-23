@@ -1,28 +1,4 @@
-$colors: (
-  text: #2a2a2a,
-  light-text: lighten(#2a2a2a, 40%),
-  light-bg: #ecf0f3,
-  accent: #4a0bff,
-);
-
-@function color($key) {
-  @return map-get($colors, $key);
-}
-
-$tablet: 769px;
-$mobile: 600px;
-
-@mixin tablet {
-  @media (max-width: #{$tablet}) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (max-width: #{$mobile}) {
-    @content;
-  }
-}
+@import "config";
 
 * {
   padding: 0;
